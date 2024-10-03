@@ -11,10 +11,11 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application files
-COPY . .
+COPY . ./
+ENV PORT 3000
 
 # Expose port 3000
-EXPOSE 3000
+EXPOSE $PORT
 
 # Command to run the application
 CMD ["npm", "run","dev"]
